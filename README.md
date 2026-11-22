@@ -29,4 +29,14 @@ The production output is `dist/`. Vercel configuration is included; import this 
 
 **2027 dates and venues are not yet confirmed.** Update both the competition section and FAQ when they are announced. Do not reuse a prior year's venue or schedule. Registration links go to the MATHCOUNTS Foundation; this site does not collect registrations or personal information.
 
-The four competition-round descriptions and participation information are based on the [MATHCOUNTS Competition Series](https://www.mathcounts.org/programs/mathcounts-competition-series). Chapter assignments and eligibility should always be checked with the Foundation's current official rules and local program directory.
+## Content sources and pending local details
+
+Registration fees, deadlines, eligibility, advancement, rounds and equipment rules were checked on November 22, 2026 against the Foundation's [official rules](https://www.mathcounts.org/programs/official-rules-procedures) and [registration page](https://www.mathcounts.org/register). Handbook access was checked against the [School Handbook page](https://www.mathcounts.org/resources/mathcounts-school-handbook).
+
+Direct chapter listings: [Fremont](https://www.mathcounts.org/node/277387), [Peninsula CA](https://www.mathcounts.org/node/277595), [San Mateo County](https://www.mathcounts.org/node/277639). These are separate competition chapters, not a confirmed city-by-city boundary map. Confirm school assignments with the coordinator before registration; no city or school coverage list has been approved for this site.
+
+Although the national directory contains dates, local dates and roster lockouts remain unpublished here pending organizer confirmation. The national February window and approximate three-hour competition format are not promises of a local date or start-to-finish schedule.
+
+Local contact publication, volunteer signup, age/service-hour/training policies, guest access and a local mailing list are still pending. The direct national listings offer coordinator contacts without reproducing personal information. The national mailing list is explicitly not a local-alert signup. This static website does not collect signup requests.
+
+When updating event details, also update the hero quick facts, competition card, FAQ and visible last-updated date. Recheck time-sensitive fees and deadlines for every season. Keep internal arrows distinct from external new-tab links.

@@ -26,7 +26,7 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font);
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
 }
@@ -93,7 +93,7 @@ em {
 }
 .eyebrow {
   text-transform: uppercase;
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.16em;
   line-height: 1.5;
@@ -116,7 +116,7 @@ em {
   padding: 14px 22px;
   background: var(--primary-action);
   color: var(--primary-action-fg);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   line-height: 1.5;
   transition:
@@ -148,7 +148,7 @@ em {
   display: inline-flex;
   align-items: center;
   gap: 16px;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   line-height: 1.5;
   padding: 12px 0;
@@ -190,7 +190,7 @@ em {
 .season-bar {
   background: var(--text);
   color: var(--bg);
-  font-size: 10px;
+  font-size: 14px;
   letter-spacing: 0.06em;
 }
 .season-bar > .container {
@@ -233,7 +233,7 @@ em {
   height: 36px;
 }
 .brand > span {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.02em;
 }
@@ -247,10 +247,10 @@ em {
 #site-nav {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 20px;
 }
 #site-nav > a:not(.button) {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
 }
 #site-nav > a:not(.button):hover {
@@ -303,14 +303,14 @@ h1 em {
   margin-top: 40px;
 }
 .hero-chapters > span {
-  font-size: 9px;
+  font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 0.13em;
   color: var(--text-muted);
 }
 .hero-chapters p {
   margin-top: 5px;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 500;
 }
 .hero-chapters b {
@@ -329,7 +329,7 @@ h1 em {
   position: absolute;
   top: 0;
   right: 0;
-  font-size: 8px;
+  font-size: 14px;
   letter-spacing: 0.14em;
   opacity: 0.7;
 }
@@ -344,11 +344,11 @@ h1 em {
   margin-top: 8px;
 }
 .warmup .eyebrow {
-  font-size: 8px;
+  font-size: 14px;
   letter-spacing: 0.12em;
 }
 .warmup p {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.6;
   margin-top: 5px;
 }
@@ -356,7 +356,7 @@ h1 em {
   margin-top: 9px;
 }
 .warmup summary {
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 600;
   cursor: pointer;
   display: inline-flex;
@@ -369,7 +369,7 @@ h1 em {
 .warmup summary::-webkit-details-marker {
   display: none;
 }
-.warmup details[open] summary span {
+.warmup details[open] summary .answer-chevron {
   transform: rotate(90deg);
 }
 .warmup details > p {
@@ -386,7 +386,7 @@ h1 em {
   padding-bottom: 28px;
 }
 .intro-strip > p {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.6;
   color: var(--text-muted);
 }
@@ -395,7 +395,7 @@ h1 em {
   color: var(--text);
 }
 .intro-strip > div {
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 500;
   display: flex;
   gap: 12px;
@@ -430,7 +430,7 @@ h1 em {
   gap: 8px;
   border: 1px solid #658073;
   padding: 5px 12px;
-  font-size: 9px;
+  font-size: 14px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -450,7 +450,7 @@ h1 em {
 .competition-main > div {
   padding-top: 5px;
   max-width: 430px;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.85;
 }
 .muted-light {
@@ -473,7 +473,7 @@ h1 em {
 }
 .event-facts span {
   text-transform: uppercase;
-  font-size: 8px;
+  font-size: 14px;
   letter-spacing: 0.13em;
   color: #c1cdbd;
 }
@@ -489,12 +489,12 @@ h1 em {
   padding-top: 24px;
 }
 .competition-bottom > p {
-  font-size: 10px;
+  font-size: 14px;
   color: #c1cdbd;
   max-width: 230px;
 }
 .competition-bottom .button {
-  font-size: 10px;
+  font-size: 14px;
   min-height: 42px;
   padding: 10px 16px;
 }
@@ -509,7 +509,7 @@ h1 em {
   margin-top: 16px;
 }
 .section-heading > p {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--text-muted);
   max-width: 350px;
   line-height: 1.9;
@@ -542,7 +542,7 @@ h1 em {
   gap: 12px;
 }
 .chapter-card-top > span {
-  font-size: 8px;
+  font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
@@ -560,7 +560,7 @@ h1 em {
   margin-top: 14px;
 }
 .chapter-card > p {
-  font-size: 10px;
+  font-size: 14px;
   color: var(--text-muted);
   margin-top: 5px;
 }
@@ -571,7 +571,7 @@ h1 em {
   border-top: 1px solid #b7bfae;
   margin-top: 24px;
   padding-top: 14px;
-  font-size: 9px;
+  font-size: 14px;
 }
 .chapter-peninsula .chapter-status {
   border-color: #cbb49e;
@@ -584,7 +584,7 @@ h1 em {
   height: 4px;
 }
 .chapter-note {
-  font-size: 11px;
+  font-size: 14px;
   color: var(--text-muted);
   margin-top: 22px;
 }
@@ -605,7 +605,7 @@ h1 em {
   font-size: 48px;
 }
 .start-intro > p:not(.eyebrow) {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--text-muted);
   max-width: 340px;
   margin-top: 22px;
@@ -628,7 +628,7 @@ h1 em {
   padding-bottom: 0;
 }
 .option-number {
-  font-size: 10px;
+  font-size: 14px;
   color: #a75232;
   padding-top: 5px;
 }
@@ -638,7 +638,7 @@ h1 em {
   line-height: 1.5;
 }
 .start-option p {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.85;
   color: var(--text-muted);
   margin-top: 6px;
@@ -678,7 +678,7 @@ h1 em {
 .resource-type {
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  font-size: 8px;
+  font-size: 14px;
 }
 .resource-symbol {
   font-family: var(--serif);
@@ -707,7 +707,7 @@ h1 em {
   font-size: 22px;
 }
 .resource-card > p {
-  font-size: 11px;
+  font-size: 14px;
   color: var(--text-muted);
   line-height: 1.85;
   margin-top: 11px;
@@ -733,7 +733,7 @@ h1 em {
 }
 .faq-list details {
   border-bottom: 1px solid var(--border);
-  padding: 20px 0;
+  padding: 0;
 }
 .faq-list summary {
   display: flex;
@@ -741,8 +741,10 @@ h1 em {
   justify-content: space-between;
   gap: 22px;
   cursor: pointer;
+  padding: 20px 0;
+  min-height: 64px;
   list-style: none;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 500;
   line-height: 1.6;
 }
@@ -759,15 +761,15 @@ h1 em {
   transform: rotate(45deg);
 }
 .faq-list details > p {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--text-muted);
   line-height: 1.9;
   margin-top: 14px;
-  padding-right: 24px;
+  padding: 0 24px 20px 0;
 }
 .faq-list .inline-link {
   display: inline-block;
-  font-size: 12px;
+  font-size: 14px;
   margin: 12px 0 4px;
 }
 .closing-banner {
@@ -812,15 +814,15 @@ h1 em {
   padding-bottom: 35px;
 }
 .footer-top > p {
-  font-size: 11px;
+  font-size: 14px;
   line-height: 1.9;
 }
 .footer-top > p > span {
-  font-size: 10px;
+  font-size: 14px;
   color: var(--text-muted);
 }
 .footer-top .text-link {
-  font-size: 10px;
+  font-size: 14px;
 }
 .footer-bottom {
   display: flex;
@@ -829,7 +831,7 @@ h1 em {
   gap: 24px;
   border-top: 1px solid var(--border);
   padding-top: 20px;
-  font-size: 8px;
+  font-size: 14px;
   color: var(--text-muted);
 }
 
@@ -863,18 +865,18 @@ h1 em {
     padding-top: 54px;
   }
   .hero-description {
-    font-size: 13px;
+    font-size: 14px;
   }
   .hero-actions {
     gap: 16px;
   }
   .hero-actions .button {
-    font-size: 10px;
+    font-size: 14px;
     padding: 14px 17px;
     gap: 16px;
   }
   .hero-actions .text-link {
-    font-size: 10px;
+    font-size: 14px;
   }
   .hero-chapters {
     margin-top: 30px;
@@ -898,7 +900,7 @@ h1 em {
     font-size: 25px;
   }
   .chapter-status {
-    font-size: 8px;
+    font-size: 14px;
   }
   .start-layout,
   .faq-section {
@@ -927,10 +929,10 @@ h1 em {
     gap: 25px;
   }
   .footer-top > p {
-    font-size: 10px;
+    font-size: 14px;
   }
 }
-@media (max-width: 900px) {
+@media (max-width: 1150px) {
   .container {
     width: calc(100% - 48px);
   }
@@ -942,10 +944,10 @@ h1 em {
     height: 31px;
   }
   .brand > span {
-    font-size: 11px;
+    font-size: 14px;
   }
   .brand strong {
-    font-size: 13px;
+    font-size: 14px;
   }
   .menu-toggle {
     display: flex;
@@ -955,7 +957,7 @@ h1 em {
     background: transparent;
     border: 0;
     cursor: pointer;
-    font-size: 12px;
+    font-size: 14px;
   }
   .menu-icon {
     display: flex;
@@ -1009,13 +1011,13 @@ h1 em {
     font-size: clamp(48px, 6.4vw, 65px);
   }
   .hero .eyebrow {
-    font-size: 8px;
+    font-size: 14px;
   }
   .hero-description {
-    font-size: 12px;
+    font-size: 14px;
   }
   .hero-chapters p {
-    font-size: 9px;
+    font-size: 14px;
   }
   .hero-chapters b {
     margin: 0 3px;
@@ -1028,16 +1030,16 @@ h1 em {
     padding: 13px 14px;
   }
   .hero-actions .text-link {
-    font-size: 10px;
+    font-size: 14px;
   }
   .art-corner {
-    font-size: 7px;
+    font-size: 14px;
   }
   .warmup {
     padding: 15px 16px;
   }
   .warmup p {
-    font-size: 10px;
+    font-size: 14px;
   }
   .intro-strip {
     grid-template-columns: 1.25fr 1fr 1fr 1fr;
@@ -1046,10 +1048,10 @@ h1 em {
     padding-bottom: 20px;
   }
   .intro-strip > p {
-    font-size: 10px;
+    font-size: 14px;
   }
   .intro-strip > div {
-    font-size: 9px;
+    font-size: 14px;
     gap: 7px;
   }
   .intro-strip > div > span {
@@ -1073,16 +1075,16 @@ h1 em {
     margin-top: 24px;
   }
   .competition-main > div {
-    font-size: 11px;
+    font-size: 14px;
   }
   .event-facts {
     margin-top: 25px;
   }
   .event-facts strong {
-    font-size: 12px;
+    font-size: 14px;
   }
   .competition-bottom > p {
-    font-size: 9px;
+    font-size: 14px;
     max-width: 200px;
   }
   h2 {
@@ -1090,7 +1092,7 @@ h1 em {
   }
   .section-heading > p {
     max-width: 270px;
-    font-size: 11px;
+    font-size: 14px;
   }
   .chapter-grid {
     gap: 12px;
@@ -1112,12 +1114,12 @@ h1 em {
     font-size: 22px;
   }
   .chapter-status {
-    font-size: 7px;
+    font-size: 14px;
     gap: 5px;
     margin-top: 18px;
   }
   .chapter-note {
-    font-size: 10px;
+    font-size: 14px;
   }
   .start-layout,
   .faq-section {
@@ -1129,7 +1131,7 @@ h1 em {
     font-size: 36px;
   }
   .start-intro > p:not(.eyebrow) {
-    font-size: 11px;
+    font-size: 14px;
   }
   .start-option {
     gap: 13px;
@@ -1139,7 +1141,7 @@ h1 em {
     font-size: 15px;
   }
   .start-option p {
-    font-size: 10px;
+    font-size: 14px;
   }
   .option-arrow {
     font-size: 22px;
@@ -1148,14 +1150,14 @@ h1 em {
     padding: 20px 16px;
   }
   .resource-type {
-    font-size: 7px;
+    font-size: 14px;
   }
   .resource-card h3 {
-    font-size: 12px;
+    font-size: 14px;
     gap: 8px;
   }
   .resource-card > p {
-    font-size: 10px;
+    font-size: 14px;
   }
   .resource-symbol {
     font-size: 48px;
@@ -1164,10 +1166,10 @@ h1 em {
     padding-bottom: 0;
   }
   .faq-list summary {
-    font-size: 12px;
+    font-size: 14px;
   }
   .faq-list details > p {
-    font-size: 11px;
+    font-size: 14px;
   }
   .closing-banner > .container {
     gap: 25px;
@@ -1180,7 +1182,7 @@ h1 em {
   }
   .closing-banner .button {
     min-width: auto;
-    font-size: 10px;
+    font-size: 14px;
     gap: 15px;
     padding: 14px 18px;
   }
@@ -1191,10 +1193,10 @@ h1 em {
     margin-left: auto;
   }
   .footer-top .text-link {
-    font-size: 10px;
+    font-size: 14px;
   }
   .footer-bottom {
-    font-size: 7px;
+    font-size: 14px;
   }
 }
 @media (max-width: 650px) {
@@ -1205,7 +1207,7 @@ h1 em {
     width: calc(100% - 40px);
   }
   .season-bar {
-    font-size: 8px;
+    font-size: 14px;
   }
   .season-bar > .container {
     min-height: 30px;
@@ -1223,7 +1225,7 @@ h1 em {
     gap: 35px;
   }
   .hero .eyebrow {
-    font-size: 9px;
+    font-size: 14px;
   }
   h1 {
     font-size: clamp(52px, 12vw, 75px);
@@ -1231,7 +1233,7 @@ h1 em {
   }
   .hero-description {
     max-width: 440px;
-    font-size: 13px;
+    font-size: 14px;
     margin-top: 20px;
   }
   .hero-actions {
@@ -1239,20 +1241,20 @@ h1 em {
     margin-top: 24px;
   }
   .hero-actions .button {
-    font-size: 11px;
+    font-size: 14px;
     padding: 15px 18px;
   }
   .hero-actions .text-link {
-    font-size: 11px;
+    font-size: 14px;
   }
   .hero-chapters {
     margin-top: 26px;
   }
   .hero-chapters > span {
-    font-size: 8px;
+    font-size: 14px;
   }
   .hero-chapters p {
-    font-size: 10px;
+    font-size: 14px;
   }
   .hero-art {
     max-width: 450px;
@@ -1262,7 +1264,7 @@ h1 em {
   .art-corner {
     top: 0;
     right: 0;
-    font-size: 7px;
+    font-size: 14px;
   }
   .math-art {
     max-height: 325px;
@@ -1272,13 +1274,13 @@ h1 em {
     margin-top: 0;
   }
   .warmup p {
-    font-size: 12px;
+    font-size: 14px;
   }
   .warmup .eyebrow {
-    font-size: 8px;
+    font-size: 14px;
   }
   .warmup summary {
-    font-size: 11px;
+    font-size: 14px;
     margin-top: 0;
   }
   .intro-strip {
@@ -1287,7 +1289,7 @@ h1 em {
     padding: 24px 0;
   }
   .intro-strip > p {
-    font-size: 12px;
+    font-size: 14px;
   }
   .intro-strip > p br {
     display: none;
@@ -1296,7 +1298,7 @@ h1 em {
     margin-left: 4px;
   }
   .intro-strip > div {
-    font-size: 11px;
+    font-size: 14px;
     gap: 14px;
   }
   .intro-strip > div > span {
@@ -1315,10 +1317,10 @@ h1 em {
     padding: 30px 24px;
   }
   .competition-top .eyebrow {
-    font-size: 9px;
+    font-size: 14px;
   }
   .outline-tag {
-    font-size: 8px;
+    font-size: 14px;
     padding: 4px 9px;
   }
   .competition-main {
@@ -1329,7 +1331,7 @@ h1 em {
     font-size: 48px;
   }
   .competition-main > div {
-    font-size: 12px;
+    font-size: 14px;
     max-width: 100%;
   }
   .event-facts {
@@ -1345,11 +1347,11 @@ h1 em {
     align-items: center;
   }
   .event-facts span {
-    font-size: 8px;
+    font-size: 14px;
     max-width: 100px;
   }
   .event-facts strong {
-    font-size: 12px;
+    font-size: 14px;
     text-align: right;
   }
   .competition-bottom {
@@ -1359,11 +1361,11 @@ h1 em {
     padding-top: 22px;
   }
   .competition-bottom > p {
-    font-size: 10px;
+    font-size: 14px;
     max-width: 100%;
   }
   .competition-bottom .button {
-    font-size: 11px;
+    font-size: 14px;
     min-height: 46px;
   }
   .section-heading {
@@ -1371,7 +1373,7 @@ h1 em {
     margin-bottom: 28px;
   }
   .eyebrow {
-    font-size: 9px;
+    font-size: 14px;
   }
   h2 {
     font-size: 43px;
@@ -1382,7 +1384,7 @@ h1 em {
   .section-heading > p {
     max-width: 100%;
     margin-top: 22px;
-    font-size: 12px;
+    font-size: 14px;
   }
   .chapter-grid {
     grid-template-columns: 1fr;
@@ -1396,7 +1398,7 @@ h1 em {
     flex-direction: row;
   }
   .chapter-card-top > span {
-    font-size: 9px;
+    font-size: 14px;
   }
   .chapter-card-top svg {
     width: 60px;
@@ -1407,16 +1409,16 @@ h1 em {
     margin-top: 8px;
   }
   .chapter-card > p {
-    font-size: 11px;
+    font-size: 14px;
   }
   .chapter-status {
-    font-size: 10px;
+    font-size: 14px;
     margin-top: 22px;
     padding-top: 16px;
     gap: 8px;
   }
   .chapter-note {
-    font-size: 11px;
+    font-size: 14px;
     line-height: 1.9;
     margin-top: 20px;
   }
@@ -1433,12 +1435,12 @@ h1 em {
     font-size: 42px;
   }
   .start-intro > p:not(.eyebrow) {
-    font-size: 12px;
+    font-size: 14px;
     margin-top: 20px;
     max-width: 100%;
   }
   .start-intro .text-link {
-    font-size: 11px;
+    font-size: 14px;
     margin-top: 15px;
   }
   .start-option {
@@ -1449,11 +1451,11 @@ h1 em {
     font-size: 17px;
   }
   .start-option p {
-    font-size: 12px;
+    font-size: 14px;
     max-width: 100%;
   }
   .option-number {
-    font-size: 10px;
+    font-size: 14px;
   }
   .option-arrow {
     font-size: 24px;
@@ -1466,7 +1468,7 @@ h1 em {
     padding: 23px 25px 26px;
   }
   .resource-type {
-    font-size: 9px;
+    font-size: 14px;
   }
   .resource-symbol {
     font-size: 58px;
@@ -1477,7 +1479,7 @@ h1 em {
     font-size: 18px;
   }
   .resource-card > p {
-    font-size: 12px;
+    font-size: 14px;
     max-width: 100%;
     margin-top: 9px;
   }
@@ -1489,17 +1491,17 @@ h1 em {
     gap: 30px;
   }
   .faq-section .text-link {
-    font-size: 11px;
+    font-size: 14px;
     margin-top: 18px;
   }
   .faq-list details {
-    padding: 20px 0;
+    padding: 0;
   }
   .faq-list summary {
-    font-size: 13px;
+    font-size: 14px;
   }
   .faq-list details > p {
-    font-size: 12px;
+    font-size: 14px;
     padding-right: 10px;
   }
   .closing-banner > .container {
@@ -1517,7 +1519,7 @@ h1 em {
   }
   .closing-banner .button {
     min-height: 48px;
-    font-size: 11px;
+    font-size: 14px;
     gap: 22px;
   }
   .site-footer {
@@ -1530,14 +1532,14 @@ h1 em {
   }
   .footer-top > p {
     margin: 24px 0 10px;
-    font-size: 11px;
+    font-size: 14px;
   }
   .footer-top .text-link {
-    font-size: 11px;
+    font-size: 14px;
   }
   .footer-bottom {
     display: block;
-    font-size: 8px;
+    font-size: 14px;
     line-height: 1.9;
   }
   .footer-bottom > p + p {
@@ -1553,5 +1555,330 @@ h1 em {
   *::after {
     transition: none !important;
     animation: none !important;
+  }
+}
+
+/* Practical guidance and readable text at every viewport. */
+.hero-description,
+.warmup p,
+.competition-main > div,
+.event-facts strong,
+.competition-bottom > p,
+.section-heading > p,
+.chapter-card > p,
+.chapter-note,
+.start-intro > p:not(.eyebrow),
+.start-option p,
+.resource-card > p,
+.faq-list details > p,
+.faq-list summary,
+.volunteer-copy,
+.footer-top > p {
+  font-size: 16px;
+}
+.button,
+.text-link,
+#site-nav > a:not(.button),
+.faq-list .inline-link {
+  font-size: 15px;
+  min-height: 44px;
+}
+#site-nav > a:not(.button) {
+  display: flex;
+  align-items: center;
+}
+.button-small,
+.competition-bottom .button,
+.menu-toggle {
+  min-height: 44px;
+}
+.hero-quick-facts {
+  border-left: 3px solid var(--accent);
+  padding: 12px 16px;
+  margin-top: 24px;
+  font-size: 15px;
+  background: #efeee3;
+}
+.hero-quick-facts p + p {
+  margin-top: 4px;
+}
+.hero-quick-facts a {
+  display: inline-block;
+  padding: 10px 0;
+}
+.hero-chapters {
+  margin-top: 24px;
+}
+.hero-chapters p {
+  font-size: 15px;
+}
+.round-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid #466257;
+  gap: 24px;
+  margin-top: 28px;
+  padding-top: 24px;
+}
+.round-grid h3 {
+  font-size: 20px;
+  font-weight: 600;
+}
+.round-grid p {
+  font-size: 15px;
+  color: #c1cdbd;
+  margin-top: 6px;
+}
+.competition-note {
+  font-size: 15px;
+  color: #c1cdbd;
+  margin-top: 22px;
+}
+.competition-note a {
+  color: var(--bg);
+}
+.competition-note a:hover {
+  color: #eaa17b;
+}
+.competition-main > div,
+.section-heading > p {
+  max-width: 460px;
+}
+.competition-bottom > p {
+  max-width: 340px;
+}
+.chapter-card {
+  transition: box-shadow 0.2s;
+}
+.chapter-card:hover {
+  box-shadow: inset 0 0 0 2px var(--text);
+}
+.chapter-link {
+  font-size: 15px;
+  margin-top: 18px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.chapter-status {
+  margin-top: auto;
+  padding-top: 14px;
+}
+.chapter-card > p {
+  margin-bottom: 12px;
+}
+.chapter-card .chapter-status {
+  margin-top: 22px;
+}
+.guide-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+.guide-card {
+  padding: 30px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  min-width: 0;
+}
+.guide-card h3 {
+  font-size: 23px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+.guide-card p {
+  font-size: 16px;
+  color: var(--text-muted);
+  margin-top: 18px;
+}
+.guide-card strong,
+.checklist strong {
+  color: var(--text);
+}
+.guide-card .text-link {
+  margin-top: 14px;
+}
+.checklist {
+  padding-left: 22px;
+  margin: 18px 0 0;
+  font-size: 16px;
+  color: var(--text-muted);
+}
+.checklist li + li {
+  margin-top: 14px;
+}
+.registration-fees {
+  grid-column: 1 / -1;
+}
+.registration-fees .button {
+  margin-top: 22px;
+}
+.registration-fees .small-note {
+  font-size: 14px;
+}
+.registration-fees table {
+  width: 100%;
+  max-width: 660px;
+  border-collapse: collapse;
+  margin-top: 24px;
+  font-size: 16px;
+  text-align: left;
+}
+.registration-fees caption {
+  text-align: left;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.registration-fees th,
+.registration-fees td {
+  border-bottom: 1px solid var(--border);
+  padding: 12px 10px;
+}
+.registration-fees th:first-child {
+  padding-left: 0;
+}
+.event-day,
+.volunteer-section {
+  background: #eeeee4;
+}
+.event-day .guide-card {
+  background: transparent;
+}
+.contact-links {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.volunteer-copy h3 {
+  font-size: 23px;
+  font-weight: 500;
+}
+.volunteer-copy h3:not(:first-child) {
+  margin-top: 28px;
+}
+.volunteer-copy p {
+  margin-top: 12px;
+  color: var(--text-muted);
+}
+.notice {
+  border-left: 3px solid var(--accent);
+  padding: 14px 18px;
+}
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 28px;
+  padding-bottom: 20px;
+  font-size: 15px;
+}
+.footer-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.answer-hide {
+  display: none;
+}
+.warmup summary {
+  min-height: 44px;
+}
+.warmup details[open] .answer-show {
+  display: none;
+}
+.warmup details[open] .answer-hide {
+  display: inline;
+}
+.warmup details[open] summary .answer-chevron {
+  transform: rotate(180deg);
+}
+@media (max-width: 1150px) {
+  #site-nav {
+    max-height: calc(100dvh - 82px);
+    overflow-y: auto;
+  }
+  .start-layout,
+  .faq-section {
+    grid-template-columns: 1fr;
+  }
+  .start-intro > p:not(.eyebrow) {
+    max-width: 600px;
+  }
+  .start-option p {
+    max-width: 600px;
+  }
+  .footer-top > p {
+    margin-left: 0;
+  }
+}
+@media (max-width: 650px) {
+  .season-bar span:last-child {
+    display: none;
+  }
+  .art-corner,
+  .chapter-card-top > span {
+    display: none;
+  }
+  .hero {
+    padding-top: 28px;
+  }
+  .hero-description {
+    line-height: 1.65;
+  }
+  .hero-quick-facts {
+    font-size: 14px;
+    padding: 12px;
+  }
+  .hero-chapters {
+    display: none;
+  }
+  .math-art {
+    max-height: 220px;
+  }
+  .hero-art {
+    gap: 8px;
+  }
+  .round-grid,
+  .guide-grid {
+    grid-template-columns: 1fr;
+  }
+  .round-grid {
+    gap: 18px;
+  }
+  .guide-card {
+    padding: 22px 18px;
+  }
+  .registration-fees table {
+    font-size: 14px;
+    table-layout: fixed;
+  }
+  .registration-fees th,
+  .registration-fees td {
+    padding: 12px 4px;
+    overflow-wrap: anywhere;
+  }
+  .chapter-card-top {
+    flex-direction: row;
+  }
+  .chapter-card-top svg {
+    align-self: auto;
+    width: 40px;
+    height: 40px;
+  }
+  .chapter-card h3 {
+    margin-top: 10px;
+  }
+  .contact-links .text-link {
+    gap: 12px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
   }
 }
