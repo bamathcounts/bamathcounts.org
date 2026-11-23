@@ -31,7 +31,7 @@ python -m http.server 4177 --bind 0.0.0.0 --directory dist
 - `templates/`: shared header, navigation and page layouts.
 - `static/styles.css`: typography and responsive styles.
 
-Competition dates are published as an announcement, not as separate homepage event data. Venues, schedules, public local contact details and volunteer signup remain unconfirmed. Do not reuse last year’s event details. The 2026 logistics archives and photo are no longer published.
+Competition dates and the Verkada HQ venue are published as an announcement, not as separate homepage event data. Schedules, arrival details, public local contact details and volunteer signup remain unconfirmed. Do not reuse last year’s event details. The 2026 logistics archives and photo are no longer published.
 
 The four navigation tabs are ordinary page links, with the current page marked for screen readers. Content and navigation work without JavaScript. Inter is self-hosted under `static/fonts/`; its license is included there.
 

@@ -15,15 +15,14 @@
     <link rel="icon" href="{{ get_url(path='favicon.svg') | safe }}" type="image/svg+xml" />
     <link rel="stylesheet" href="{{ get_url(path='styles.css', cachebust=true) | safe }}" />
     {% if active == "announcements" %}
-    <link rel="alternate" type="application/atom+xml" title="Bay Area MATHCOUNTS announcements" href="{{ get_url(path='announcements/atom.xml') | safe }}" />
+    <link rel="alternate" type="application/atom+xml" title="{{ config.title }} announcements" href="{{ get_url(path='announcements/atom.xml') | safe }}" />
     {% endif %}
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
       <div class="header-inner">
-        <a class="site-title" href="{{ get_url(path='', trailing_slash=true) | safe }}">Bay Area <strong>MATHCOUNTS</strong></a>
-        <p>Fremont, Peninsula &amp; San Mateo County</p>
+        <a class="site-title" href="{{ get_url(path='', trailing_slash=true) | safe }}">{{ config.title }}</a>
       </div>
     </header>
     <div class="navigation">
