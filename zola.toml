@@ -1,7 +1,22 @@
 base_url = "https://bamathcounts.org"
 title = "Fremont, Peninsula, and San Mateo MATHCOUNTS Chapters"
-description = "Dates, registration and updates for the Fremont, Peninsula and San Mateo County MATHCOUNTS chapters."
+description = "Announcements and competition logistics for the Fremont, Peninsula and San Mateo County MATHCOUNTS chapters."
 default_language = "en"
 output_dir = "dist"
-compile_sass = false
-build_search_index = false
+
+[extra]
+# Shown under the MATHCOUNTS wordmark in the header.
+header_title = "Fremont, Peninsula, and San Mateo Chapters"
+
+# Coordinators as listed on each chapter's mathcounts.org page.
+[[extra.coordinators]]
+name = "Moor Xu"
+email = "moorxu@gmail.com"
+
+[[extra.coordinators]]
+name = "Oliver Ni"
+email = "oliver.ni@gmail.com"
+
+[[extra.coordinators]]
+name = "Andrew Liu"
+email = "liu.andrew@berkeley.edu"
