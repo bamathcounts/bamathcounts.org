@@ -25,13 +25,13 @@ python -m http.server 4177 --bind 0.0.0.0 --directory dist
 
 ## Edit the site
 
-- `data/chapters.toml`: confirmed dates and venues. An empty venue displays “To be announced.”
+- `content/announcements/`: competition dates and other dated updates, linked automatically from the homepage.
 - `content/_index.md`: the homepage introduction.
 - `content/registration.md` and `content/contact.md`: the other information pages.
 - `templates/`: shared header, navigation and page layouts.
 - `static/styles.css`: typography and responsive styles.
 
-The dates are **February 27, 2027 for San Mateo County** and **February 28, 2027 for Fremont and Peninsula**, as confirmed by Oliver. Venues, schedules, public local contact details and volunteer signup remain unconfirmed. Do not reuse last year’s event details. The 2026 logistics archives and photo are no longer published.
+Competition dates are published as an announcement, not as separate homepage event data. Venues, schedules, public local contact details and volunteer signup remain unconfirmed. Do not reuse last year’s event details. The 2026 logistics archives and photo are no longer published.
 
 The four navigation tabs are ordinary page links, with the current page marked for screen readers. Content and navigation work without JavaScript. Inter is self-hosted under `static/fonts/`; its license is included there.
 
@@ -48,7 +48,7 @@ date = 2026-12-01
 Write the announcement here. Markdown headings, lists and links are supported.
 ```
 
-Use a real publication date and confirmed content. This is an example only; the announcement list starts empty. Merge the change to `main` to publish it. Zola lists announcements newest first and creates a permalink and Atom feed. Dates do not schedule publication; to keep an unfinished post off the site, add `draft = true` in its front matter.
+Use a real publication date and confirmed content. The example above is not a published announcement. Merge the change to `main` to publish it. Zola lists announcements newest first and creates a permalink and Atom feed. Dates do not schedule publication; to keep an unfinished post off the site, add `draft = true` in its front matter.
 
 ## GitHub Pages
 
