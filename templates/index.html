@@ -1,20 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="prose">{{ section.content | safe }}</div>
+<div class="prose intro">{{ section.content | safe }}</div>
 {% set feed = get_section(path="announcements/_index.md") %}
 <h2 class="feed-heading">Announcements</h2>
-<ul class="feed">
+<div class="feed">
   {%- for post in feed.pages %}
-  <li>
+  <article>
     <time datetime="{{ post.date }}">{{ post.date | date(format="%b %-d, %Y") }}</time>
-    <a href="{{ post.permalink | safe }}">{{ post.title }}</a>
-  </li>
+    <h3><a href="{{ post.permalink | safe }}">{{ post.title }}</a></h3>
+    <div class="prose">{{ post.content | safe }}</div>
+  </article>
   {%- endfor %}
-</ul>
-<h2 class="feed-heading">Contact</h2>
-<p class="contact">Email a chapter coordinator:
-  {%- for c in config.extra.coordinators %}
-  <a href="mailto:{{ c.email }}">{{ c.name }}</a>{% if not loop.last %},{% endif %}
-  {%- endfor %}
-</p>
+</div>
 {% endblock content %}

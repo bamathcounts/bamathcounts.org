@@ -17,17 +17,28 @@
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
-    <header>
-      <a class="site-title" href="{{ home | safe }}">
-        <img src="{{ get_url(path='mathcounts.svg') | safe }}" alt="MATHCOUNTS" width="285" height="26">
-        {{ config.extra.header_title }}
-      </a>
-      <nav aria-label="Main">
-        <a href="{{ home | safe }}"{% if active == "home" %} aria-current="page"{% endif %}>Home</a>
-        <a href="{{ get_url(path='fremont-peninsula/') | safe }}"{% if active == "fremont-peninsula" %} aria-current="page"{% endif %}>Fremont/Peninsula<span> logistics</span></a>
-        <a href="{{ get_url(path='san-mateo/') | safe }}"{% if active == "san-mateo" %} aria-current="page"{% endif %}>San Mateo<span> logistics</span></a>
-      </nav>
-    </header>
+    <div class="sidebar">
+      <header>
+        <a class="site-title" href="{{ home | safe }}">
+          <img src="{{ get_url(path='mathcounts.svg') | safe }}" alt="MATHCOUNTS" width="285" height="26">
+          {{ config.extra.header_title }}
+        </a>
+        <nav aria-label="Main">
+          <a href="{{ home | safe }}"{% if active == "home" %} aria-current="page"{% endif %}>Home</a>
+          <a href="{{ get_url(path='fremont-peninsula/') | safe }}"{% if active == "fremont-peninsula" %} aria-current="page"{% endif %}>Fremont/Peninsula<span> logistics</span></a>
+          <a href="{{ get_url(path='san-mateo/') | safe }}"{% if active == "san-mateo" %} aria-current="page"{% endif %}>San Mateo<span> logistics</span></a>
+        </nav>
+      </header>
+      <section class="contact" aria-labelledby="contact-heading">
+        <h2 id="contact-heading">Contact</h2>
+        <p>Email a chapter coordinator:</p>
+        <ul>
+          {%- for c in config.extra.coordinators %}
+          <li><a href="mailto:{{ c.email }}">{{ c.name }}</a></li>
+          {%- endfor %}
+        </ul>
+      </section>
+    </div>
     <main id="main">
       {%- block content %}{% endblock content %}
     </main>
