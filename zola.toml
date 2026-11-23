@@ -1,5 +1,5 @@
 base_url = "https://bamathcounts.org"
-title = "Bay Area MATHCOUNTS"
+title = "Fremont, Peninsula, and San Mateo MATHCOUNTS Chapters"
 description = "Dates, registration and updates for the Fremont, Peninsula and San Mateo County MATHCOUNTS chapters."
 default_language = "en"
 output_dir = "dist"

@@ -26,7 +26,7 @@ jobs:
       - uses: actions/configure-pages@v5
         id: pages
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
-      - run: zola build --base-url "$SITE_URL"
+      - run: zola build --base-url "${SITE_URL/#http:/https:}"
         env:
           SITE_URL: ${{ steps.pages.outputs.base_url || 'https://bamathcounts.github.io/bamathcounts.org/' }}
       - uses: actions/upload-pages-artifact@v3
