@@ -1,15 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>{{ section.title }}</h1>
 <div class="intro">{{ section.content | safe }}</div>
 {% set announcements = get_section(path="announcements/_index.md") %}
-{% if announcements.pages %}
-<h2>Announcements</h2>
-<ul>
-  {% for announcement in announcements.pages %}
-  <li><a href="{{ announcement.permalink | safe }}">{{ announcement.title }}</a></li>
-  {% endfor %}
-</ul>
-{% endif %}
-<p>Students must register in advance. <a href="{{ get_url(path='registration/', trailing_slash=true) | safe }}">Registration information and fees</a>.</p>
+<section aria-labelledby="announcements-title">
+  <h1 id="announcements-title">Latest announcements</h1>
+  {% include "feed.html" %}
+</section>
 {% endblock content %}

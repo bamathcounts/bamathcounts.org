@@ -1,6 +1,6 @@
-{% set active = "competition" %}
+{% set active = "home" %}
 {% if page is defined %}
-  {% set active = page.extra.nav | default(value="announcements") %}
+  {% set active = page.extra.nav | default(value="home") %}
 {% elif section is defined and section.extra.nav is defined %}
   {% set active = section.extra.nav %}
 {% endif %}
@@ -9,36 +9,30 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#163854" />
+    <meta name="theme-color" content="#fcfdfc" />
     <title>{% block title %}{{ config.title }}{% endblock title %}</title>
     <meta name="description" content="{{ config.description }}" />
     <link rel="icon" href="{{ get_url(path='favicon.svg') | safe }}" type="image/svg+xml" />
     <link rel="stylesheet" href="{{ get_url(path='styles.css', cachebust=true) | safe }}" />
-    {% if active == "announcements" %}
     <link rel="alternate" type="application/atom+xml" title="{{ config.title }} announcements" href="{{ get_url(path='announcements/atom.xml') | safe }}" />
-    {% endif %}
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
+    <div class="shell">
     <header class="site-header">
-      <div class="header-inner">
-        <a class="site-title" href="{{ get_url(path='', trailing_slash=true) | safe }}">{{ config.title }}</a>
-      </div>
-    </header>
-    <div class="navigation">
+      <a class="brand" href="{{ get_url(path='', trailing_slash=true) | safe }}">{{ config.title }}</a>
       <nav aria-label="Main navigation">
-        <a href="{{ get_url(path='', trailing_slash=true) | safe }}"{% if active == "competition" %} aria-current="page"{% endif %}>Competition</a>
-        <a href="{{ get_url(path='announcements/', trailing_slash=true) | safe }}"{% if active == "announcements" %} aria-current="page"{% endif %}>Announcements</a>
-        <a href="{{ get_url(path='registration/', trailing_slash=true) | safe }}"{% if active == "registration" %} aria-current="page"{% endif %}>Registration</a>
-        <a href="{{ get_url(path='contact/', trailing_slash=true) | safe }}"{% if active == "contact" %} aria-current="page"{% endif %}>Contact</a>
+        <a href="{{ get_url(path='', trailing_slash=true) | safe }}"{% if active == "home" %} aria-current="page"{% endif %}>Home</a>
+        <a href="{{ get_url(path='fremont-peninsula/', trailing_slash=true) | safe }}"{% if active == "fremont-peninsula" %} aria-current="page"{% endif %}>Fremont/Peninsula logistics</a>
+        <a href="{{ get_url(path='san-mateo/', trailing_slash=true) | safe }}"{% if active == "san-mateo" %} aria-current="page"{% endif %}>San Mateo logistics</a>
       </nav>
-    </div>
+    </header>
     <main id="main" tabindex="-1">
       {% block content %}{% endblock content %}
     </main>
-    <footer>
-      <p>A local website for the Fremont, Peninsula and San Mateo County chapters.</p>
+    <footer class="site-footer">
       <p>MATHCOUNTS® is a registered trademark of the MATHCOUNTS Foundation.</p>
     </footer>
+    </div>
   </body>
 </html>
