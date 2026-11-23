@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block title %}Page not found · {{ config.title }}{% endblock title %}
 {% block content %}
-<article class="prose">
+<article class="panel prose">
   <h1>Page not found</h1>
   <p><a href="{{ get_url(path='', trailing_slash=true) | safe }}">Back to the home page</a></p>
 </article>
