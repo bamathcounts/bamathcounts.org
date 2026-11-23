@@ -12,16 +12,23 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: read
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: npm
-      - run: npm ci
-      - run: npm run build
+      - name: Install Zola 0.23.6
+        run: |
+          curl -fsSL https://github.com/getzola/zola/releases/download/v0.23.6/zola-v0.23.6-x86_64-unknown-linux-gnu.tar.gz -o "$RUNNER_TEMP/zola.tar.gz"
+          echo "8f5132b3522412d04e395e0b25f6d68613ad272a873e54a2b3ebf664873024a4  $RUNNER_TEMP/zola.tar.gz" | sha256sum --check
+          tar -xzf "$RUNNER_TEMP/zola.tar.gz" -C "$RUNNER_TEMP" zola
+          echo "$RUNNER_TEMP" >> "$GITHUB_PATH"
+      - uses: actions/configure-pages@v5
+        id: pages
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+      - run: zola build --base-url "$SITE_URL"
         env:
-          PAGES_BASE_PATH: /${{ github.event.repository.name }}/
+          SITE_URL: ${{ steps.pages.outputs.base_url || 'https://bamathcounts.github.io/bamathcounts.org/' }}
       - uses: actions/upload-pages-artifact@v3
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         with:
@@ -41,7 +48,6 @@ jobs:
       group: github-pages
       cancel-in-progress: false
     steps:
-      - uses: actions/configure-pages@v5
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

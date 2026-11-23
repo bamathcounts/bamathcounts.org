@@ -1,0 +1,45 @@
+{% set active = "competition" %}
+{% if page is defined %}
+  {% set active = page.extra.nav | default(value="announcements") %}
+{% elif section is defined and section.extra.nav is defined %}
+  {% set active = section.extra.nav %}
+{% endif %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#163854" />
+    <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+    <meta name="description" content="{{ config.description }}" />
+    <link rel="icon" href="{{ get_url(path='favicon.svg') | safe }}" type="image/svg+xml" />
+    <link rel="stylesheet" href="{{ get_url(path='styles.css', cachebust=true) | safe }}" />
+    {% if active == "announcements" %}
+    <link rel="alternate" type="application/atom+xml" title="Bay Area MATHCOUNTS announcements" href="{{ get_url(path='announcements/atom.xml') | safe }}" />
+    {% endif %}
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="site-title" href="{{ get_url(path='', trailing_slash=true) | safe }}">Bay Area <strong>MATHCOUNTS</strong></a>
+        <p>Fremont, Peninsula &amp; San Mateo County</p>
+      </div>
+    </header>
+    <div class="navigation">
+      <nav aria-label="Main navigation">
+        <a href="{{ get_url(path='', trailing_slash=true) | safe }}"{% if active == "competition" %} aria-current="page"{% endif %}>Competition</a>
+        <a href="{{ get_url(path='announcements/', trailing_slash=true) | safe }}"{% if active == "announcements" %} aria-current="page"{% endif %}>Announcements</a>
+        <a href="{{ get_url(path='registration/', trailing_slash=true) | safe }}"{% if active == "registration" %} aria-current="page"{% endif %}>Registration</a>
+        <a href="{{ get_url(path='contact/', trailing_slash=true) | safe }}"{% if active == "contact" %} aria-current="page"{% endif %}>Contact</a>
+      </nav>
+    </div>
+    <main id="main" tabindex="-1">
+      {% block content %}{% endblock content %}
+    </main>
+    <footer>
+      <p>A local website for the Fremont, Peninsula and San Mateo County chapters.</p>
+      <p>MATHCOUNTS® is a registered trademark of the MATHCOUNTS Foundation.</p>
+    </footer>
+  </body>
+</html>

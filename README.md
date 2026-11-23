@@ -1,72 +1,69 @@
 # Bay Area MATHCOUNTS
 
-Plain, static information for the Fremont, Peninsula and San Mateo County chapters.
+A small [Zola](https://www.getzola.org/) site for the Fremont, Peninsula and San Mateo County chapters. No Node.js, database or client-side JavaScript is needed.
 
 ## Run locally
 
-Requires Node.js 22 or later.
+Install **Zola 0.23.6** using the [official installation instructions](https://www.getzola.org/documentation/getting-started/installation/), then run:
 
 ```sh
-npm ci
-npm run dev
+zola serve --interface 0.0.0.0
 ```
 
-Build with `npm run build`, then serve `dist/` with `npm run preview` or any static HTTP server. The production site works without JavaScript, a database, environment secrets or external fonts.
+Build static HTML into `dist/`:
+
+```sh
+zola build
+```
+
+Zola generates links for the build’s base URL. To test a production build on a local server:
+
+```sh
+zola build --base-url http://localhost:4177
+python -m http.server 4177 --bind 0.0.0.0 --directory dist
+```
+
+## Edit the site
+
+- `data/chapters.toml`: confirmed dates and venues. An empty venue displays “To be announced.”
+- `content/_index.md`: the homepage introduction.
+- `content/registration.md` and `content/contact.md`: the other information pages.
+- `templates/`: shared header, navigation and page layouts.
+- `static/styles.css`: typography and responsive styles.
+
+The dates are **February 27, 2027 for San Mateo County** and **February 28, 2027 for Fremont and Peninsula**, as confirmed by Oliver. Venues, schedules, public local contact details and volunteer signup remain unconfirmed. Do not reuse last year’s event details. The 2026 logistics archives and photo are no longer published.
+
+The four navigation tabs are ordinary page links, with the current page marked for screen readers. Content and navigation work without JavaScript. Inter is self-hosted under `static/fonts/`; its license is included there.
 
 ## Publish an announcement
 
-Ask Devin to publish the text, or edit [`content/announcements.json`](content/announcements.json) on GitHub and propose a change. Add an entry like this:
+Ask Devin to publish it, or add a Markdown file under `content/announcements/` through GitHub. For example, create `content/announcements/registration-reminder.md` with:
 
-```json
-[
-  {
-    "date": "2027-01-15",
-    "title": "Example announcement — replace before publishing",
-    "body": "First paragraph.\n\nSecond paragraph.",
-    "links": [
-      {
-        "label": "Competition details",
-        "url": "/2026/peninsula.html"
-      }
-    ]
-  }
-]
+```markdown
++++
+title = "Replace with the real announcement title"
+date = 2026-12-01
++++
+
+Write the announcement here. Markdown headings, lists and links are supported.
 ```
 
-This is an example only; the live announcement list starts empty. Use real publication dates (`YYYY-MM-DD`) and confirmed information. `links` is optional; link to HTTPS destinations or site-relative paths beginning with `/`. Body text is plain text, not HTML or Markdown. Separate paragraphs with `\n\n`.
-
-Announcements are validated and rendered into HTML at build time, newest first. Same-day entries retain their file order. A malformed date, missing title/body or unsafe link fails the build. There is no admin login, scheduled publishing or mailing-list subscription system: saving a future date does not schedule the entry. Once merged to `main`, GitHub Actions rebuilds and publishes the site. In local development, changing the file reloads the page.
-
-## Edit logistics and other information
-
-- `index.html`: current-season dates, registration, logistics, resources and contacts.
-- `2026/peninsula.html`: historical Peninsula logistics, February 7, 2026.
-- `2026/san-mateo-fremont.html`: historical San Mateo County/Fremont logistics, February 22, 2026.
-- `styles.css`: shared responsive and print styles.
-- `announcements.js` and `vite.config.js`: content validation, rendering and build configuration.
-
-The archives are adapted from the organizers’ published logistics documents. They are explicitly labeled historical and do not establish 2027 dates, venue, access, lunch or advancement policies. Old visitor tokens, QR codes, host names, volunteer forms and fundraising links are not published. The venue photo is historical reference only.
-
-Do not publish local dates, venue, chapter boundaries, personal contact information, signup forms or operational policies until confirmed. Update the page’s last-updated date when its information changes.
+Use a real publication date and confirmed content. This is an example only; the announcement list starts empty. Merge the change to `main` to publish it. Zola lists announcements newest first and creates a permalink and Atom feed. Dates do not schedule publication; to keep an unfinished post off the site, add `draft = true` in its front matter.
 
 ## GitHub Pages
 
-The `Build and deploy website` workflow builds pull requests and deploys `main` to GitHub Pages. One-time repository setup: under [Settings → Pages](https://github.com/bamathcounts/bamathcounts.org/settings/pages), select **GitHub Actions** as the source. The workflow can also be run manually after setup. It requests only the Pages and OIDC permissions needed by the deployment job.
+The `Build and deploy website` workflow builds pull requests and deploys `main`. It downloads the pinned official Zola release and verifies its SHA-256 checksum before building.
 
-The default project-site URL uses `/bamathcounts.org/`, so CI builds with `PAGES_BASE_PATH=/bamathcounts.org/`. To reproduce that build locally:
+One-time repository setup: select **GitHub Actions** under [Settings → Pages](https://github.com/bamathcounts/bamathcounts.org/settings/pages). The workflow can also be run manually after setup.
 
-```sh
-PAGES_BASE_PATH=/bamathcounts.org/ npm run build
-```
+The workflow obtains the Pages base URL before building, so generated links work at the default project URL or a configured custom domain. Pull requests build for `https://bamathcounts.github.io/bamathcounts.org/`. After changing the Pages custom domain, rerun the full workflow so Zola rebuilds its links. Do not set the custom domain until its DNS is ready. Hosting does not use Vercel.
 
-The default development/preview base is `/`. When connecting the custom domain `bamathcounts.org`, configure its DNS and GitHub Pages custom domain together, then change the workflow’s `PAGES_BASE_PATH` to `/`. No custom domain or CNAME is configured yet, so the initial Pages URL can work before DNS is ready. Hosting does not use Vercel.
+The managing Devin App is built separately with its own preview URL as `--base-url`; it is not public hosting.
 
-## Official sources
+## Sources
 
-- [Registration](https://www.mathcounts.org/register) — 2026–27 fees and deadlines.
-- [Official rules and procedures](https://www.mathcounts.org/programs/official-rules-procedures) — eligibility, rounds, equipment and advancement.
-- [Competition rules FAQ](https://www.mathcounts.org/programs/competition-rules-faq).
-- [California chapter directory](https://www.mathcounts.org/programs/chapter-state-competition-search?state=673).
-- Official listings: [Fremont](https://www.mathcounts.org/node/277387), [Peninsula CA](https://www.mathcounts.org/node/277595), [San Mateo County](https://www.mathcounts.org/node/277639).
+- Dates: Oliver’s confirmed 2027 chapter dates.
+- [Foundation registration](https://www.mathcounts.org/register) and [official rules](https://www.mathcounts.org/programs/official-rules-procedures).
+- Chapter listings: [San Mateo County](https://www.mathcounts.org/node/277639), [Fremont](https://www.mathcounts.org/node/277387), [Peninsula](https://www.mathcounts.org/node/277595).
 
-Registration facts were checked November 22, 2026. Local 2027 dates and venues remain unconfirmed.
+Registration facts were checked November 22, 2026.

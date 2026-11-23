@@ -1,0 +1,368 @@
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("fonts/InterVariable.woff2") format("woff2");
+}
+
+:root {
+  color-scheme: light;
+  --bg: #fff;
+  --surface: #fff;
+  --text: #253348;
+  --text-muted: #586779;
+  --border: #dce3eb;
+  --accent: #215a86;
+  --accent-fg: #fff;
+  --header-bg: #163854;
+  --header-text: #fff;
+  --header-muted: #d4e0eb;
+  --primary-action: var(--accent);
+  --primary-action-fg: var(--accent-fg);
+  --radius: 4px;
+  --font: "Inter", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 18px;
+  line-height: 1.7;
+  font-optical-sizing: auto;
+  -webkit-text-size-adjust: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+a {
+  color: var(--accent);
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1px;
+}
+a:hover {
+  text-decoration-thickness: 2px;
+}
+a:focus-visible,
+main:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 5px;
+  border-radius: var(--radius);
+}
+h1,
+h2,
+h3 {
+  color: var(--header-bg);
+  font-weight: 650;
+  line-height: 1.3;
+  letter-spacing: -0.025em;
+}
+h1 {
+  font-size: 1.85rem;
+  margin: 0 0 1rem;
+}
+h2 {
+  font-size: 1.2rem;
+  margin: 2rem 0 0.65rem;
+}
+h3 {
+  font-size: 1.05rem;
+  margin: 1.5rem 0 0.5rem;
+}
+p {
+  margin: 0 0 1.25rem;
+}
+strong {
+  font-weight: 650;
+}
+ul,
+ol {
+  padding-left: 1.3rem;
+  margin: 0 0 1.25rem;
+}
+li {
+  margin-bottom: 0.5rem;
+}
+
+.site-header {
+  background: var(--header-bg);
+  color: var(--header-text);
+}
+.header-inner,
+nav,
+main,
+footer {
+  width: min(100% - 4rem, 60rem);
+  margin-inline: auto;
+}
+.header-inner {
+  padding-block: 1.8rem 1.7rem;
+}
+.site-title {
+  color: var(--header-text);
+  font-size: 1.55rem;
+  line-height: 1.35;
+  letter-spacing: -0.035em;
+  font-weight: 450;
+  text-decoration: none;
+}
+.site-title:focus-visible {
+  outline-color: var(--header-text);
+}
+.header-inner p {
+  margin: 0.4rem 0 0;
+  color: var(--header-muted);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+.navigation {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.75rem;
+}
+nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 3.5rem;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -1px;
+  padding: 0.65rem 0.1rem 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+nav a:hover {
+  color: var(--accent);
+}
+nav a[aria-current="page"] {
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 650;
+}
+main {
+  padding-block: 2.6rem 3rem;
+  min-height: 25rem;
+}
+.intro {
+  color: var(--text-muted);
+  max-width: 45rem;
+  font-size: 1.05rem;
+}
+.prose {
+  max-width: 44rem;
+}
+.prose h1 {
+  margin-bottom: 1.25rem;
+}
+.competition-list {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0 1.5rem;
+}
+.competition-list > li {
+  display: grid;
+  grid-template-columns: 1.2fr 2.8fr;
+  align-items: center;
+  gap: 1.2rem;
+  padding-block: 1.4rem;
+  margin: 0;
+  border-top: 1px solid var(--border);
+}
+.competition-list > li:last-child {
+  border-bottom: 1px solid var(--border);
+}
+.competition-list h2 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+.competition-list h2 a {
+  text-decoration: none;
+}
+.competition-list h2 a:hover {
+  text-decoration: underline;
+}
+.competition-list dl {
+  display: grid;
+  grid-template-columns: 1.75fr 1fr;
+  gap: 1rem;
+  margin: 0;
+  font-size: 0.95rem;
+}
+.competition-list dt {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  margin-bottom: 0.2rem;
+}
+.competition-list dd {
+  margin: 0;
+  line-height: 1.55;
+}
+.pending,
+.event-note {
+  color: var(--text-muted);
+}
+.event-note {
+  font-size: 0.9rem;
+  max-width: 45rem;
+}
+.announcement + .announcement {
+  border-top: 1px solid var(--border);
+  padding-top: 0.5rem;
+  margin-top: 2rem;
+}
+.announcement h2 {
+  margin-bottom: 0.35rem;
+}
+.announcement-date,
+.back-link {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+.back-link {
+  margin-bottom: 1rem;
+}
+footer {
+  border-top: 1px solid var(--border);
+  padding-block: 1.4rem 2rem;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  line-height: 1.6;
+}
+footer p {
+  margin-bottom: 0.25rem;
+}
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -5rem;
+  padding: 0.5rem 1rem;
+  background: var(--surface);
+  z-index: 100;
+}
+.skip-link:focus {
+  top: 0.5rem;
+}
+
+@media (max-width: 720px) {
+  .header-inner,
+  nav,
+  main,
+  footer {
+    width: calc(100% - 2.5rem);
+  }
+  .competition-list > li {
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+  }
+  .competition-list dl {
+    grid-template-columns: 1.5fr 1fr;
+  }
+  .competition-list dt {
+    font-size: 0.8rem;
+  }
+  nav {
+    gap: 0 1.2rem;
+  }
+  nav a {
+    font-size: 0.85rem;
+  }
+  main {
+    padding-top: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    font-size: 17px;
+  }
+  .header-inner,
+  nav,
+  main,
+  footer {
+    width: calc(100% - 2rem);
+  }
+  .header-inner {
+    padding-block: 1.5rem;
+  }
+  .site-title {
+    font-size: 1.4rem;
+  }
+  h1 {
+    font-size: 1.65rem;
+  }
+  nav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 1rem;
+  }
+  nav a {
+    min-height: 2.9rem;
+    font-size: 0.88rem;
+    justify-content: center;
+  }
+  .competition-list dl {
+    grid-template-columns: 1fr;
+    gap: 0.45rem;
+  }
+  .competition-list dl > div {
+    display: grid;
+    grid-template-columns: 3.3rem 1fr;
+    gap: 0.4rem;
+  }
+  .competition-list dt {
+    font-size: 0.82rem;
+    margin: 0;
+    line-height: 1.8;
+  }
+  footer {
+    font-size: 0.82rem;
+  }
+}
+
+@media print {
+  :root {
+    font-size: 11pt;
+    color: var(--text);
+  }
+  .site-header {
+    background: none;
+    color: var(--text);
+  }
+  .site-title,
+  .header-inner p {
+    color: var(--text);
+  }
+  .header-inner,
+  main,
+  footer {
+    width: 100%;
+  }
+  .header-inner {
+    padding-block: 0 1rem;
+  }
+  main {
+    padding-top: 1rem;
+    min-height: 0;
+  }
+  .navigation,
+  .skip-link {
+    display: none;
+  }
+  .competition-list > li {
+    break-inside: avoid;
+  }
+  h1,
+  h2 {
+    break-after: avoid;
+  }
+  a {
+    color: inherit;
+  }
+}

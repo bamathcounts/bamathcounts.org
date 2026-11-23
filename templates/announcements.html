@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}{{ section.title }} · {{ config.title }}{% endblock title %}
+{% block content %}
+<h1>{{ section.title }}</h1>
+{% if section.pages %}
+  {% for announcement in section.pages %}
+  <article class="announcement prose">
+    <h2><a href="{{ announcement.permalink | safe }}">{{ announcement.title }}</a></h2>
+    <p class="announcement-date"><time datetime="{{ announcement.date }}">{{ announcement.date | date(format="%B %-d, %Y") }}</time></p>
+    {{ announcement.content | safe }}
+  </article>
+  {% endfor %}
+{% else %}
+<p class="intro">No announcements yet.</p>
+<p>Competition updates and logistics will be posted here as they are confirmed.</p>
+{% endif %}
+{% endblock content %}
