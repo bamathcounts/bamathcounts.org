@@ -8,7 +8,7 @@ output_dir = "dist"
 # Shown under the MATHCOUNTS wordmark in the header.
 header_title = "Fremont, Peninsula, and San Mateo Chapters"
 
-# Coordinators as listed on each chapter's mathcounts.org page.
+# Coordinators as listed on each chapter's mathcounts.org page. The Contact link on home emails all of them at once.
 [[extra.coordinators]]
 name = "Moor Xu"
 email = "moorxu@gmail.com"
