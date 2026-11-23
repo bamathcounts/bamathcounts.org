@@ -97,18 +97,15 @@ footer { padding-bottom: 2rem; color: var(--muted); font-size: 0.8125rem; }
   .sidebar { border-right: 0; border-bottom: 1px solid var(--rule); }
   .sidebar-inner { position: static; padding: 1.5rem 0 0; }
   .site-title { padding: 0 1.25rem; font-size: 1.125rem; }
-  nav { flex-direction: row; gap: 0 1.25rem; margin-top: 0.75rem; padding: 0 1.25rem; }
+  nav { flex-direction: row; flex-wrap: wrap; gap: 0 1.25rem; margin-top: 0.75rem; padding: 0 1.25rem; }
   nav a { margin-bottom: -1px; padding: 0.5rem 0; border-left: 0; border-bottom: 2px solid transparent; white-space: nowrap; }
   nav a[aria-current] { border-bottom-color: var(--brand); background: none; }
   main, footer { max-width: 44rem; margin: 0 auto; padding-left: 1.25rem; padding-right: 1.25rem; }
   main { padding-top: 1.75rem; }
 }
 
-@media (max-width: 26rem) {
-  nav a span { display: none; }
-}
-
 @media (max-width: 30rem) {
+  nav a span { display: none; }
   .feed li { flex-direction: column; gap: 0; }
   .feed time { flex: none; font-size: 0.875rem; }
 }
