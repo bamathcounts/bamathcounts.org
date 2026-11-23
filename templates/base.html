@@ -18,19 +18,23 @@
   <body>
     <a class="skip" href="#main">Skip to content</a>
     <header>
+      <div class="wrap">
       <a class="site-title" href="{{ home | safe }}">
         <img src="{{ get_url(path='mathcounts.svg') | safe }}" alt="MATHCOUNTS" width="285" height="26">
         {{ config.extra.header_title }}
       </a>
-      <nav aria-label="Main">
+      </div>
+    </header>
+    <nav aria-label="Main">
+      <div class="wrap">
         <a href="{{ home | safe }}"{% if active == "home" %} aria-current="page"{% endif %}>Home</a>
         <a href="{{ get_url(path='fremont-peninsula/') | safe }}"{% if active == "fremont-peninsula" %} aria-current="page"{% endif %}>Fremont/Peninsula<span> logistics</span></a>
         <a href="{{ get_url(path='san-mateo/') | safe }}"{% if active == "san-mateo" %} aria-current="page"{% endif %}>San Mateo<span> logistics</span></a>
-      </nav>
-    </header>
-    <main id="main">
+      </div>
+    </nav>
+    <main id="main" class="wrap">
       {%- block content %}{% endblock content %}
     </main>
-    <footer>MATHCOUNTS is a registered trademark of the MATHCOUNTS Foundation.</footer>
+    <footer><div class="wrap">MATHCOUNTS is a registered trademark of the MATHCOUNTS Foundation.</div></footer>
   </body>
 </html>
