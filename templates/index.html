@@ -3,13 +3,12 @@
 <div class="prose intro">{{ section.content | safe }}</div>
 {% set feed = get_section(path="announcements/_index.md") %}
 <h2 class="feed-heading">Announcements</h2>
-<div class="feed">
+<ul class="feed">
   {%- for post in feed.pages %}
-  <article>
+  <li>
     <time datetime="{{ post.date }}">{{ post.date | date(format="%b %-d, %Y") }}</time>
-    <h3><a href="{{ post.permalink | safe }}">{{ post.title }}</a></h3>
-    <div class="prose">{{ post.content | safe }}</div>
-  </article>
+    <a href="{{ post.permalink | safe }}">{{ post.title }}</a>
+  </li>
   {%- endfor %}
-</div>
+</ul>
 {% endblock content %}
