@@ -11,4 +11,10 @@
   </li>
   {%- endfor %}
 </ul>
+<h2 class="feed-heading">Contact</h2>
+<p class="contact">Email a chapter coordinator:
+  {%- for c in config.extra.coordinators %}
+  <a href="mailto:{{ c.email }}">{{ c.name }}</a>{% if not loop.last %},{% endif %}
+  {%- endfor %}
+</p>
 {% endblock content %}

@@ -40,6 +40,8 @@ a:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
   letter-spacing: -0.015em;
 }
 .site-title:hover { text-decoration: none; }
+.site-title img { display: block; width: auto; height: 0.875rem; margin-bottom: 0.5rem; }
+.contact { margin: 0.4rem 0 0; }
 
 nav {
   display: flex;
@@ -105,3 +107,4 @@ footer { color: var(--muted); font-size: 0.8125rem; }
   display: inline-block;
   margin-bottom: 0.5rem;
 }
+.contact a { white-space: nowrap; }

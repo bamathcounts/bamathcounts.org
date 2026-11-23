@@ -3,3 +3,16 @@ title = "Fremont, Peninsula, and San Mateo MATHCOUNTS Chapters"
 description = "Announcements and competition logistics for the Fremont, Peninsula and San Mateo County MATHCOUNTS chapters."
 default_language = "en"
 output_dir = "dist"
+
+# Coordinators as listed on each chapter's mathcounts.org page.
+[[extra.coordinators]]
+name = "Moor Xu"
+email = "moorxu@gmail.com"
+
+[[extra.coordinators]]
+name = "Oliver Ni"
+email = "oliver.ni@gmail.com"
+
+[[extra.coordinators]]
+name = "Andrew Liu"
+email = "liu.andrew@berkeley.edu"

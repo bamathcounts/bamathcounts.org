@@ -18,7 +18,10 @@
   <body>
     <a class="skip" href="#main">Skip to content</a>
     <header>
-      <a class="site-title" href="{{ home | safe }}">{{ config.title }}</a>
+      <a class="site-title" href="{{ home | safe }}">
+        <img src="{{ get_url(path='mathcounts.svg') | safe }}" alt="MATHCOUNTS" width="285" height="26">
+        {{ config.title }}
+      </a>
       <nav aria-label="Main">
         <a href="{{ home | safe }}"{% if active == "home" %} aria-current="page"{% endif %}>Home</a>
         <a href="{{ get_url(path='fremont-peninsula/') | safe }}"{% if active == "fremont-peninsula" %} aria-current="page"{% endif %}>Fremont/Peninsula<span> logistics</span></a>
