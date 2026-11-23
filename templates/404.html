@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block title %}Page not found · {{ config.title }}{% endblock title %}
+{% block content %}
+<h1>Page not found</h1>
+<p>Try the <a href="{{ get_url(path='', trailing_slash=true) | safe }}">current competition information</a>.</p>
+{% endblock content %}
