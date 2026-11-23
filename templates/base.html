@@ -20,7 +20,7 @@
     <header>
       <a class="site-title" href="{{ home | safe }}">
         <img src="{{ get_url(path='mathcounts.svg') | safe }}" alt="MATHCOUNTS" width="285" height="26">
-        {{ config.title }}
+        {{ config.extra.header_title }}
       </a>
       <nav aria-label="Main">
         <a href="{{ home | safe }}"{% if active == "home" %} aria-current="page"{% endif %}>Home</a>

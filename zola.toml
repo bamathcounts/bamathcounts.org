@@ -4,6 +4,10 @@ description = "Announcements and competition logistics for the Fremont, Peninsul
 default_language = "en"
 output_dir = "dist"
 
+[extra]
+# Shown under the MATHCOUNTS wordmark in the header.
+header_title = "Fremont, Peninsula, and San Mateo Chapters"
+
 # Coordinators as listed on each chapter's mathcounts.org page.
 [[extra.coordinators]]
 name = "Moor Xu"
