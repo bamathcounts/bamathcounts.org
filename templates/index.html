@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="prose">{{ section.content | safe }}</div>
+<div class="prose intro">{{ section.content | safe }}</div>
 {% set feed = get_section(path="announcements/_index.md") %}
 <h2 class="feed-heading">Announcements</h2>
 <ul class="feed">
