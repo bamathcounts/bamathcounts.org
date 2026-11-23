@@ -12,9 +12,10 @@
   {%- endfor %}
 </ul>
 <h2 class="feed-heading">Contact</h2>
-<p class="contact"><a href="mailto:{% for c in config.extra.coordinators %}{{ c.email }}{% if not loop.last %},{% endif %}{% endfor %}">Email the chapter coordinators</a>:
+<p class="contact"><a href="mailto:{% for c in config.extra.coordinators %}{{ c.email }}{% if not loop.last %},{% endif %}{% endfor %}">Email the chapter coordinators</a>:</p>
+<ul class="coordinators">
   {%- for c in config.extra.coordinators %}
-  {{ c.name }}{% if not loop.last %},{% endif %}
+  <li>{{ c.name }} <span>{{ c.email }}</span></li>
   {%- endfor %}
-</p>
+</ul>
 {% endblock content %}
