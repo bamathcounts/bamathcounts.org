@@ -2,24 +2,14 @@
 {% block content %}
 <h1>{{ section.title }}</h1>
 <div class="intro">{{ section.content | safe }}</div>
-{% set competitions = load_data(path="data/chapters.toml") %}
-<ul class="competition-list" aria-label="Chapter competition dates and venues">
-  {% for chapter in competitions.chapters %}
-  <li>
-    <h2><a href="{{ chapter.listing | safe }}">{{ chapter.name }}</a></h2>
-    <dl>
-      <div>
-        <dt>Date</dt>
-        <dd><time datetime="{{ chapter.date }}">{{ chapter.date | date(format="%A, %B %-d, %Y") }}</time></dd>
-      </div>
-      <div>
-        <dt>Venue</dt>
-        <dd{% if not chapter.venue %} class="pending"{% endif %}>{% if chapter.venue %}{{ chapter.venue }}{% else %}To be announced{% endif %}</dd>
-      </div>
-    </dl>
-  </li>
+{% set announcements = get_section(path="announcements/_index.md") %}
+{% if announcements.pages %}
+<h2>Announcements</h2>
+<ul>
+  {% for announcement in announcements.pages %}
+  <li><a href="{{ announcement.permalink | safe }}">{{ announcement.title }}</a></li>
   {% endfor %}
 </ul>
-<p class="event-note">Venue details and the competition-day schedule will be added once confirmed.</p>
+{% endif %}
 <p>Students must register in advance. <a href="{{ get_url(path='registration/', trailing_slash=true) | safe }}">Registration information and fees</a>.</p>
 {% endblock content %}
