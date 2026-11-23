@@ -16,6 +16,7 @@
     <link rel="alternate" type="application/atom+xml" title="Announcements" href="{{ get_url(path='announcements/atom.xml') | safe }}">
   </head>
   <body>
+    <a class="skip" href="#main">Skip to content</a>
     <header>
       <a class="site-title" href="{{ home | safe }}">{{ config.title }}</a>
       <nav aria-label="Main">
@@ -24,7 +25,7 @@
         <a href="{{ get_url(path='san-mateo/') | safe }}"{% if active == "san-mateo" %} aria-current="page"{% endif %}>San Mateo<span> logistics</span></a>
       </nav>
     </header>
-    <main>
+    <main id="main">
       {%- block content %}{% endblock content %}
     </main>
     <footer>MATHCOUNTS is a registered trademark of the MATHCOUNTS Foundation.</footer>

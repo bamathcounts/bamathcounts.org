@@ -94,3 +94,14 @@ footer { color: var(--muted); font-size: 0.8125rem; }
   .feed li { flex-direction: column; gap: 0; }
   .feed time { flex: none; font-size: 0.875rem; }
 }
+
+.skip {
+  position: absolute;
+  left: -999rem;
+}
+
+.skip:focus {
+  position: static;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
