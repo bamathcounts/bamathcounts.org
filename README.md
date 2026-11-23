@@ -1,42 +1,72 @@
 # Bay Area MATHCOUNTS
 
-The local chapter website for Fremont, Peninsula, and San Mateo County. A responsive static site built with semantic HTML, CSS, and a small JavaScript navigation enhancement; Vite handles local development and production assets.
+Plain, static information for the Fremont, Peninsula and San Mateo County chapters.
 
-## Develop
+## Run locally
 
-Use Node.js 22 or later.
+Requires Node.js 22 or later.
 
 ```sh
 npm ci
 npm run dev
 ```
 
-## Build and preview
+Build with `npm run build`, then serve `dist/` with `npm run preview` or any static HTTP server. The production site works without JavaScript, a database, environment secrets or external fonts.
 
-```sh
-npm run build
-npm run preview
+## Publish an announcement
+
+Ask Devin to publish the text, or edit [`content/announcements.json`](content/announcements.json) on GitHub and propose a change. Add an entry like this:
+
+```json
+[
+  {
+    "date": "2027-01-15",
+    "title": "Example announcement — replace before publishing",
+    "body": "First paragraph.\n\nSecond paragraph.",
+    "links": [
+      {
+        "label": "Competition details",
+        "url": "/2026/peninsula.html"
+      }
+    ]
+  }
+]
 ```
 
-The production output is `dist/`. Vercel configuration is included; import this repository, use the Vite framework preset, and deploy. No environment variables, database, or paid services are required.
+This is an example only; the live announcement list starts empty. Use real publication dates (`YYYY-MM-DD`) and confirmed information. `links` is optional; link to HTTPS destinations or site-relative paths beginning with `/`. Body text is plain text, not HTML or Markdown. Separate paragraphs with `\n\n`.
 
-## Updating content
+Announcements are validated and rendered into HTML at build time, newest first. Same-day entries retain their file order. A malformed date, missing title/body or unsafe link fails the build. There is no admin login, scheduled publishing or mailing-list subscription system: saving a future date does not schedule the entry. Once merged to `main`, GitHub Actions rebuilds and publishes the site. In local development, changing the file reloads the page.
 
-- Chapter, event, resource, and FAQ content is in `index.html`.
-- Design tokens and responsive layouts are in `styles.css`.
-- Mobile menu behavior is in `script.js`; FAQs and the warm-up answer use native HTML disclosures.
-- The favicon is in `public/favicon.svg`.
+## Edit logistics and other information
 
-**2027 dates and venues are not yet confirmed.** Update both the competition section and FAQ when they are announced. Do not reuse a prior year's venue or schedule. Registration links go to the MATHCOUNTS Foundation; this site does not collect registrations or personal information.
+- `index.html`: current-season dates, registration, logistics, resources and contacts.
+- `2026/peninsula.html`: historical Peninsula logistics, February 7, 2026.
+- `2026/san-mateo-fremont.html`: historical San Mateo County/Fremont logistics, February 22, 2026.
+- `styles.css`: shared responsive and print styles.
+- `announcements.js` and `vite.config.js`: content validation, rendering and build configuration.
 
-## Content sources and pending local details
+The archives are adapted from the organizers’ published logistics documents. They are explicitly labeled historical and do not establish 2027 dates, venue, access, lunch or advancement policies. Old visitor tokens, QR codes, host names, volunteer forms and fundraising links are not published. The venue photo is historical reference only.
 
-Registration fees, deadlines, eligibility, advancement, rounds and equipment rules were checked on November 22, 2026 against the Foundation's [official rules](https://www.mathcounts.org/programs/official-rules-procedures) and [registration page](https://www.mathcounts.org/register). Handbook access was checked against the [School Handbook page](https://www.mathcounts.org/resources/mathcounts-school-handbook).
+Do not publish local dates, venue, chapter boundaries, personal contact information, signup forms or operational policies until confirmed. Update the page’s last-updated date when its information changes.
 
-Direct chapter listings: [Fremont](https://www.mathcounts.org/node/277387), [Peninsula CA](https://www.mathcounts.org/node/277595), [San Mateo County](https://www.mathcounts.org/node/277639). These are separate competition chapters, not a confirmed city-by-city boundary map. Confirm school assignments with the coordinator before registration; no city or school coverage list has been approved for this site.
+## GitHub Pages
 
-Although the national directory contains dates, local dates and roster lockouts remain unpublished here pending organizer confirmation. The national February window and approximate three-hour competition format are not promises of a local date or start-to-finish schedule.
+The `Build and deploy website` workflow builds pull requests and deploys `main` to GitHub Pages. One-time repository setup: under [Settings → Pages](https://github.com/bamathcounts/bamathcounts.org/settings/pages), select **GitHub Actions** as the source. The workflow can also be run manually after setup. It requests only the Pages and OIDC permissions needed by the deployment job.
 
-Local contact publication, volunteer signup, age/service-hour/training policies, guest access and a local mailing list are still pending. The direct national listings offer coordinator contacts without reproducing personal information. The national mailing list is explicitly not a local-alert signup. This static website does not collect signup requests.
+The default project-site URL uses `/bamathcounts.org/`, so CI builds with `PAGES_BASE_PATH=/bamathcounts.org/`. To reproduce that build locally:
 
-When updating event details, also update the hero quick facts, competition card, FAQ and visible last-updated date. Recheck time-sensitive fees and deadlines for every season. Keep internal arrows distinct from external new-tab links.
+```sh
+PAGES_BASE_PATH=/bamathcounts.org/ npm run build
+```
+
+The default development/preview base is `/`. When connecting the custom domain `bamathcounts.org`, configure its DNS and GitHub Pages custom domain together, then change the workflow’s `PAGES_BASE_PATH` to `/`. No custom domain or CNAME is configured yet, so the initial Pages URL can work before DNS is ready. Hosting does not use Vercel.
+
+## Official sources
+
+- [Registration](https://www.mathcounts.org/register) — 2026–27 fees and deadlines.
+- [Official rules and procedures](https://www.mathcounts.org/programs/official-rules-procedures) — eligibility, rounds, equipment and advancement.
+- [Competition rules FAQ](https://www.mathcounts.org/programs/competition-rules-faq).
+- [California chapter directory](https://www.mathcounts.org/programs/chapter-state-competition-search?state=673).
+- Official listings: [Fremont](https://www.mathcounts.org/node/277387), [Peninsula CA](https://www.mathcounts.org/node/277595), [San Mateo County](https://www.mathcounts.org/node/277639).
+
+Registration facts were checked November 22, 2026. Local 2027 dates and venues remain unconfirmed.
