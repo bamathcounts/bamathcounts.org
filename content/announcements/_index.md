@@ -1,9 +1,7 @@
 +++
 title = "Announcements"
 sort_by = "date"
-template = "announcements.html"
 page_template = "announcement.html"
+redirect_to = "/"
 generate_feeds = true
-[extra]
-nav = "home"
 +++

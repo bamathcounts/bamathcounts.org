@@ -1,9 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="intro">{{ section.content | safe }}</div>
-{% set announcements = get_section(path="announcements/_index.md") %}
-<section aria-labelledby="announcements-title">
-  <h1 id="announcements-title">Latest announcements</h1>
-  {% include "feed.html" %}
-</section>
+<div class="prose">{{ section.content | safe }}</div>
+{% set feed = get_section(path="announcements/_index.md") %}
+<h2 class="feed-heading">Announcements</h2>
+<ul class="feed">
+  {%- for post in feed.pages %}
+  <li>
+    <time datetime="{{ post.date }}">{{ post.date | date(format="%b %-d, %Y") }}</time>
+    <a href="{{ post.permalink | safe }}">{{ post.title }}</a>
+  </li>
+  {%- endfor %}
+</ul>
 {% endblock content %}
