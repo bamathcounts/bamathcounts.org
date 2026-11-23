@@ -10,7 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}{{ config.title }}{% endblock title %}</title>
     <meta name="description" content="{{ config.description }}">
-    <link rel="icon" href="{{ get_url(path='favicon.svg') | safe }}" type="image/svg+xml">
+    <link rel="icon" href="{{ get_url(path='favicon-32x32.png') | safe }}" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="{{ get_url(path='apple-touch-icon.png') | safe }}">
     <link rel="preload" href="{{ get_url(path='fonts/InterVariable.woff2') | safe }}" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="{{ get_url(path='style.css', cachebust=true) | safe }}">
     <link rel="alternate" type="application/atom+xml" title="Announcements" href="{{ get_url(path='announcements/atom.xml') | safe }}">
@@ -18,19 +19,21 @@
   <body>
     <a class="skip" href="#main">Skip to content</a>
     <header>
-      <a class="site-title" href="{{ home | safe }}">
-        <img src="{{ get_url(path='mathcounts.svg') | safe }}" alt="MATHCOUNTS" width="285" height="26">
-        {{ config.extra.header_title }}
-      </a>
-      <nav aria-label="Main">
-        <a href="{{ home | safe }}"{% if active == "home" %} aria-current="page"{% endif %}>Home</a>
-        <a href="{{ get_url(path='fremont-peninsula/') | safe }}"{% if active == "fremont-peninsula" %} aria-current="page"{% endif %}>Fremont/Peninsula<span> logistics</span></a>
-        <a href="{{ get_url(path='san-mateo/') | safe }}"{% if active == "san-mateo" %} aria-current="page"{% endif %}>San Mateo<span> logistics</span></a>
-      </nav>
+      <div class="wrap">
+        <a class="site-title" href="{{ home | safe }}">
+          <img src="{{ get_url(path='mathcounts.svg') | safe }}" alt="MATHCOUNTS" width="285" height="26">
+          {{ config.extra.header_title }}
+        </a>
+        <nav aria-label="Main">
+          <a href="{{ home | safe }}"{% if active == "home" %} aria-current="page"{% endif %}>Home</a>
+          <a href="{{ get_url(path='fremont-peninsula/') | safe }}"{% if active == "fremont-peninsula" %} aria-current="page"{% endif %}>Fremont/Peninsula<span> logistics</span></a>
+          <a href="{{ get_url(path='san-mateo/') | safe }}"{% if active == "san-mateo" %} aria-current="page"{% endif %}>San Mateo<span> logistics</span></a>
+        </nav>
+      </div>
     </header>
-    <main id="main">
+    <main id="main" class="wrap">
       {%- block content %}{% endblock content %}
     </main>
-    <footer>MATHCOUNTS is a registered trademark of the MATHCOUNTS Foundation.</footer>
+    <footer class="wrap">MATHCOUNTS is a registered trademark of the MATHCOUNTS Foundation.</footer>
   </body>
 </html>
